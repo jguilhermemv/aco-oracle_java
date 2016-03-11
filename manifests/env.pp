@@ -12,9 +12,4 @@ class oracle_java::env {
     context => '/files/etc/environment',
     changes => [ "set JAVA_HOME ${oracle_java::install_path}/default" ]
   }
-
-  augeas { 'setJavaHomeOnPathVariable':
-    context => '/files/etc/environment',
-    changes => [ "set PATH ${::path}:${oracle_java::install_path}/default/bin" ]
-  }
 }
